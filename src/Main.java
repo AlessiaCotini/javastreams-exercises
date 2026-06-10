@@ -104,8 +104,11 @@ void main(String[] args) {
     listaOrdiniBaby.forEach(System.out::println);
 
     System.out.println("ESERCIZIO TRE");
-
-
+    List<Product> listaBoys = listaProdotti.stream()
+                    .filter(product -> Objects.equals(product.getCategory(), "Boys")).toList();
+    listaBoys.forEach(product -> {product.setPrice(product.getPrice()*0.9);});
+    listaBoys.forEach(System.out::println);
+    
     System.out.println("ESERCIZIO QUATTRO");
 
 
