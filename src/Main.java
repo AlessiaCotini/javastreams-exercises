@@ -46,7 +46,7 @@ void main(String[] args) {
 
     System.out.println("ESERCIZIO UNO");
     List<Product> libriPrezzoAlto = new ArrayList<>();
-    libriPrezzoAlto = listaProdotti.stream().filter(product -> Objects.equals(product.getCategory(), "Book")).filter(product -> product.getPrice() > 100).toList();
+    libriPrezzoAlto = listaProdotti.stream().filter(product -> product.getCategory().equals("Book") && product.getPrice() > 100).toList();
     System.out.println(libriPrezzoAlto);
 
     System.out.println("ESERCIZIO DUE");
