@@ -1,8 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Order {
     Random random = new Random();
@@ -14,12 +13,15 @@ public class Order {
     private Customer customer;
 
     public Order(List<Product> products, Customer customer){
-        this.id = (long) random.nextInt();
+        this.id = random.nextLong();
         this.status = "In Esecuzione";
         this.orderDate = LocalDate.now();
         this.deliveryDate = LocalDate.now().plusDays(3);
         this.products = products;
         this.customer = customer;
+    }
+    public void addProduct(Product product) {
+        this.products.add(product);
     }
 
     public Customer getCustomer() {
@@ -49,7 +51,6 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "random=" + random +
                 ", id=" + id +
                 ", status='" + status + '\'' +
                 ", orderDate=" + orderDate +
