@@ -3,21 +3,12 @@ import entities.Order;
 import entities.Product;
 
 void main(String[] args) {
-    List<Product> listaProdotti = new ArrayList<>();
-    List<Order> listaOrdini = new ArrayList<>();
-    List<Customer> listaUtenti = new ArrayList<>();
-
+    
     Customer Alessia = new Customer("Ale");
     Customer Edo = new Customer("Edo");
     Customer Anto = new Customer("Anto");
     Customer Robi = new Customer("Ro");
     Customer Edy = new Customer("Edy");
-
-    listaUtenti.add(Alessia);
-    listaUtenti.add(Edo);
-    listaUtenti.add(Anto);
-    listaUtenti.add(Robi);
-    listaUtenti.add(Edy);
 
     Product librouno = new Product(2542L, "A Forest", "Book", 12.56);
     Product librodue = new Product(5966L, "Just Like Heaven", "Book", 120.56);
@@ -37,60 +28,21 @@ void main(String[] args) {
     Product boysquattro = new Product(7955L, "Lullaby", "Boys", 59.50);
     Product boyscinque = new Product(4245L, "Play For Today", "Boys", 561.20);
 
-    listaProdotti.add(librouno);
-    listaProdotti.add(librodue);
-    listaProdotti.add(librotre);
-    listaProdotti.add(libroquattro);
-    listaProdotti.add(librocinque);
-
-    listaProdotti.add(babyuno);
-    listaProdotti.add(babydue);
-    listaProdotti.add(babytre);
-    listaProdotti.add(babyunoquattro);
-    listaProdotti.add(babycinque);
-
-    listaProdotti.add(boysuno);
-    listaProdotti.add(boysdue);
-    listaProdotti.add(boystre);
-    listaProdotti.add(boysquattro);
-    listaProdotti.add(boyscinque);
-
-    List<Product> prodottiPrimoOrdine = new ArrayList<>();
-    prodottiPrimoOrdine.add(librocinque);
-    prodottiPrimoOrdine.add(babytre);
-    prodottiPrimoOrdine.add(babycinque);
-
-    List<Product> prodottiSecondoOrdine = new ArrayList<>();
-    prodottiPrimoOrdine.add(librouno);
-    prodottiPrimoOrdine.add(babydue);
-    prodottiPrimoOrdine.add(boysdue);
-
-    List<Product> prodottiTerzoOrdine = new ArrayList<>();
-    prodottiPrimoOrdine.add(boystre);
-    prodottiPrimoOrdine.add(librotre);
-    prodottiPrimoOrdine.add(babyunoquattro);
-
-    List<Product> prodottiQuartoOrdine = new ArrayList<>();
-    prodottiPrimoOrdine.add(librodue);
-    prodottiPrimoOrdine.add(boysdue);
-    prodottiPrimoOrdine.add(boyscinque);
-
-    List<Product> prodottiQuintoOrdine = new ArrayList<>();
-    prodottiPrimoOrdine.add(libroquattro);
-    prodottiPrimoOrdine.add(librocinque);
-    prodottiPrimoOrdine.add(librouno);
-
+    List<Product> prodottiPrimoOrdine = new ArrayList<>(List.of(librocinque,babytre,babycinque));
+    List<Product> prodottiSecondoOrdine = new ArrayList<>(List.of(librouno,babydue,boysdue));
+    List<Product> prodottiTerzoOrdine = new ArrayList<>(List.of(boystre,librotre,babyunoquattro));
+    List<Product> prodottiQuartoOrdine = new ArrayList<>(List.of(librodue,librodue,boysdue,boyscinque));
+    List<Product> prodottiQuintoOrdine = new ArrayList<>(List.of(libroquattro,librocinque,librouno));
+   
     Order primoOrdine = new Order(prodottiPrimoOrdine, Alessia);
     Order secondoOrdine = new Order( prodottiSecondoOrdine, Anto);
     Order terzoOrdine = new Order(prodottiTerzoOrdine, Edo);
     Order quartoOrdine = new Order (prodottiQuartoOrdine, Robi);
     Order quintoOrdine = new Order (prodottiQuintoOrdine, Edy);
 
-    listaOrdini.add(primoOrdine);
-    listaOrdini.add(secondoOrdine);
-    listaOrdini.add(terzoOrdine);
-    listaOrdini.add(quartoOrdine);
-    listaOrdini.add(quintoOrdine);
+    List<Product> listaProdotti = new ArrayList<>(List.of(librouno,librodue,librotre,libroquattro,librocinque,babycinque,babydue,babytre,babyunoquattro,babyuno,boysuno,boysdue,boystre,boysquattro,boyscinque));
+    List<Order> listaOrdini = new ArrayList<>(List.of(primoOrdine,secondoOrdine,terzoOrdine,quartoOrdine,quintoOrdine));
+    List<Customer> listaUtenti = new ArrayList<>(List.of(Alessia,Edo,Edy,Anto,Robi));
 
     System.out.println("ESERCIZIO UNO");
     List<Product> libriPrezzoAlto = new ArrayList<>();
