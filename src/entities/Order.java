@@ -27,6 +27,9 @@ public class Order {
     public Customer getCustomer() {
         return customer;
     }
+    public Integer getCustomerTier(){
+        return customer.getTier();
+    }
 
     public Long getOrderId() {
         return id;

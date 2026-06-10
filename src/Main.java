@@ -108,9 +108,14 @@ void main(String[] args) {
                     .filter(product -> Objects.equals(product.getCategory(), "Boys")).toList();
     listaBoys.forEach(product -> {product.setPrice(product.getPrice()*0.9);});
     listaBoys.forEach(System.out::println);
-    
+
     System.out.println("ESERCIZIO QUATTRO");
-
-
+    LocalDate today = LocalDate.now();
+    List<Order> listaRistrettaOrdini = listaOrdini.stream()
+            .filter(order -> order.getOrderDate().equals(today)).toList();
+    for (Order order : listaRistrettaOrdini) {
+        if (order.getCustomerTier() != 2){}else{order.getProducts();}
+    }
+    listaRistrettaOrdini.forEach(System.out::println);
 }
 
